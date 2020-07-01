@@ -22,7 +22,7 @@ import java.util.Optional;
 @Slf4j
 public class UserServiceImpl implements UserService {
 
-    private static final String ROLE_USER = "USER";
+    private static final String ROLE_USER = "ROLE_USER";
 
     private final UserRepository userRepository;
 

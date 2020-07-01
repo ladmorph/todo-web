@@ -28,17 +28,12 @@ create table if not exists users (
     username varchar(255),
     primary key (id)
 );
-create table if not exists users_task_list (
-    user_id int8 not null,
-    task_list_id int8 not null
-);
+
+
 
 
 alter table if exists roles add constraint UK_716hgxp60ym1lifrdgp67xt5k unique (role_name);
 alter table if exists users add constraint UK_r43af9ap4edm43mmtq01oddj6 unique (username);
-alter table if exists users_task_list add constraint UK_a4l3eq7jg8bwlqi6g4nobmpse unique (task_list_id);
 alter table if exists tasks add constraint FK6s1ob9k4ihi75xbxe2w0ylsdh foreign key (user_id) references users;
 alter table if exists user_role add constraint FKt7e7djp752sqn6w22i6ocqy6q foreign key (role_id) references roles;
 alter table if exists user_role add constraint FKj345gk1bovqvfame88rcx7yyx foreign key (user_id) references users;
-alter table if exists users_task_list add constraint FKn393yo8xudq9rshhw02k25nvv foreign key (task_list_id) references tasks;
-alter table if exists users_task_list add constraint FKc86hualowwlaavacwqk1f0h40 foreign key (user_id) references users;
